@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZGW_ACA_GABRIEL_SRV" xml:lang="es" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="pais" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="IdPais"/>
+                </Key>
+                <Property Name="IdPais" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="ID COUNTRY" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NombrePais" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Nombre del Pais" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CapitalPais" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Capital del Pais" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PoblacionPais" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Poblacion del Pais" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SuperficiePais" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Superficie del Pais" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MonedaPais" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Moneda del Pais" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdiomaPais" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Idioma del Pais" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="estados" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="IdPais"/>
+                    <PropertyRef Name="IdEstado"/>
+                </Key>
+                <Property Name="IdPais" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="ID COUNTRY" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="IdEstado" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="ID del Estado" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="NameEstado" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Nombre del Estado" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CapitalEstado" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Capital del Estado" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PoblacionEstado" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Poblacion del Estado" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SuperficieEstado" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Superficie del Estad" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PuntosdeinteresEstado" Type="Edm.String" Nullable="false" MaxLength="225" sap:unicode="false" sap:label="Punto Interes Estado" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DescripcionEstado" Type="Edm.String" Nullable="false" MaxLength="225" sap:unicode="false" sap:label="Descripcion  Estado" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZGW_ACA_GABRIEL_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="paisSet" EntityType="ZGW_ACA_GABRIEL_SRV.pais" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="estadosSet" EntityType="ZGW_ACA_GABRIEL_SRV.estados" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link rel="self" href="http://stks4hpil.eastus2.cloudapp.azure.com:8002/sap/opu/odata/sap/ZGW_ACA_GABRIEL_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://stks4hpil.eastus2.cloudapp.azure.com:8002/sap/opu/odata/sap/ZGW_ACA_GABRIEL_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

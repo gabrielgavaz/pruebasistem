@@ -1,0 +1,72 @@
+<mvc:View controllerName="pruebasistem.controller.pruebaconsistem"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:tnt="sap.tnt"
+>
+  <Page title="{i18n>title}">
+
+
+        <content>
+
+
+        <tnt:ToolHeader>
+          <SearchField id="searchField" search="onSearch" width="300px" placeholder="{i18n>SearchCountry}" />
+          <ToolbarSpacer/>
+          <Button text="{i18n>addCountry}" icon="sap-icon://add" press="agregarPais" type="Emphasized">
+            <layoutData>
+              <OverflowToolbarLayoutData priority="NeverOverflow" />
+            </layoutData>
+          </Button>
+        </tnt:ToolHeader>
+
+
+      
+      	<List id="table" items="{/paisSet}" headerText="{i18n>countries}" >
+
+          <CustomListItem >
+
+            <Panel expandable="true" width="auto" class="sapUiResponsiveMargin" >
+                <headerToolbar  > 
+                  <OverflowToolbar >
+                    <Link text="{NombrePais}" press="expandir" class="titlePanel" />
+                    <ToolbarSpacer />
+                    <Button icon="sap-icon://delete" press="onOpenConfirmation" type="Reject"/>
+                  </OverflowToolbar>
+                </headerToolbar>
+                <content>
+                  <HBox justifyContent="SpaceAround" > 
+                    <VBox >
+                      <HBox>
+			                    <ObjectAttribute title="{i18n>capital}" text="{CapitalPais}" />
+                      </HBox>
+                      <HBox>
+			                    <ObjectAttribute title="{i18n>population}" text="{path: 'PoblacionPais', formatter: '.formatter.removeLeadingZerosAndFormatNumber'}" />
+                      </HBox>
+                      <HBox>
+			                    <ObjectAttribute title="{i18n>surface}" text="{path: 'SuperficiePais', formatter: '.formatter.removeLeadingZerosAndFormatNumber'}"  />
+                      </HBox>
+                    </VBox>
+                    <VBox>
+                      <HBox>
+                          <ObjectAttribute title="{i18n>language}" text="{IdiomaPais}"  />
+                      </HBox>
+                      <HBox>
+                          <ObjectAttribute title="{i18n>money}" text="{MonedaPais}"  />
+                      </HBox>
+                    </VBox>
+                  </HBox>
+
+                </content>
+                <HBox justifyContent="End">
+                  <Button text="{i18n>viewStates}" icon="sap-icon://globe" press="NavToDetail"  />
+                </HBox>
+            </Panel>
+
+
+          </CustomListItem>
+        </List>
+    </content>
+
+  </Page>
+</mvc:View>

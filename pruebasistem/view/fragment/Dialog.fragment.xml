@@ -1,0 +1,43 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+   <Dialog id="dialog" title="Ingresar Datos">
+
+
+       <content>
+            <f:SimpleForm id="form" editable="true" layout="ResponsiveGridLayout">
+               <f:content>
+                    <!-- <Label text="ID del Pais" />
+                    <Input id="idPaisInput" type="Text" />  -->
+
+                    <Label text="{i18n>nameCountry}" />
+                    <Input id="nombrePaisInput" type="Text" />
+
+                   <Label text="{i18n>capital}" />
+                   <Input id="capitalPaisInput" type="Text" />
+
+                   
+                   <Label text="{i18n>population}" />
+                   <Input id="poblacionPaisInput" type="Number" />
+
+                   <Label text="{i18n>surface}" />
+                   <Input id="superficiePaisInput" type="Number" />
+
+                   <Label text="{i18n>money}" />
+                   <Input id="monedaPaisInput" type="Text" />
+
+                   <Label text="{i18n>language}" />
+                   <Input id="idiomaPaisInput" type="Text" />                  
+
+
+                </f:content>
+            </f:SimpleForm>
+        </content>
+
+
+       <beginButton>
+            <Button text="{i18n>insert}" press="onCreate" />
+        </beginButton>
+       <endButton>
+            <Button text="{i18n>cancel}" press="closeDialog" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

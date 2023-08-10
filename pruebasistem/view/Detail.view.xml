@@ -1,0 +1,61 @@
+
+<mvc:View
+    controllerName="pruebasistem.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:tnt="sap.tnt"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+>
+    <Page
+        id="listPage"
+        title="{i18n>TitleDetailView}"
+    >
+        <tnt:ToolHeader>
+            <Title text="{NombrePais}" level="H2" />
+            <ToolbarSpacer/>
+            <Button text="{i18n>addState}" icon="sap-icon://add" press="agregarEstado" type="Emphasized">
+                <layoutData>
+                    <OverflowToolbarLayoutData priority="NeverOverflow" />
+                </layoutData>
+            </Button>
+        </tnt:ToolHeader>
+        
+        <List id="list" items="{estadosSet}">
+            <CustomListItem>
+                <HBox justifyContent="Center">
+                    <VBox width="300px">
+                        <f:SimpleForm id="leftForm" editable="false" layout="ResponsiveGridLayout">
+                            <f:content>
+                                <Label text="{i18n>nameState}" />
+                                <Text text="{NameEstado}" />
+                                <Label text="{i18n>capital}" />
+                                <Text text="{CapitalEstado}" />
+                                <Label text="{i18n>surface}" />
+                                <Text text="{path: 'SuperficieEstado', formatter: '.formatter.removeLeadingZerosAndFormatNumber'}" />
+                            </f:content>
+                        </f:SimpleForm>
+                    </VBox>
+                    <VBox width="450px">
+                        <f:SimpleForm id="rightForm" editable="false" layout="ResponsiveGridLayout">
+                            <f:content>
+                                <Label text="{i18n>population}" />
+                                <Text text="{path: 'PoblacionEstado', formatter: '.formatter.removeLeadingZerosAndFormatNumber'}" />
+                                <Label text="{i18n>pointsOfInterest}" />
+                                <Text text="{PuntosdeinteresEstado}" />
+                                <Label text="{i18n>description}" />
+                                <Text text="{DescripcionEstado}" />
+                            </f:content>
+                        </f:SimpleForm>
+                    </VBox>
+                </HBox>
+                <HBox justifyContent="End">
+                  <Button icon="sap-icon://delete" press="onOpenConfirmation" type="Reject" />
+                </HBox>
+            </CustomListItem>
+        </List>
+    </Page>
+</mvc:View>
+
+
